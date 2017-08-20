@@ -84,7 +84,7 @@
 								Animal:</label>
 							<div class="col-sm-10">
 								<input type="text" class="form-control" name="tipo" id="inputTipo"
-									ng-model="complaint.endereco.cidade">
+									ng-model="complaint.endereco.uf">
 							</div>
 							<h5>
 								<input type="checkbox" /><b> Quero
@@ -99,7 +99,11 @@
 					<label for="inputReclamacao" class="col-sm-2 col-form-label"> Reclamação:</label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" name="reclamacao" id="inputReclamacao"
-							ng-model="complaint.uf">
+							ng-model="complaint.endereco.rua">
+							<input type="text" class="form-control" name="endereco" id="inputEndereco"
+							ng-model="complaint.endereco.uf">
+							<input type="text" class="form-control" name="cidade" id="inputCidade"
+							ng-model="complaint.endereco.cidade">
 					</div>
 					<h5>
 						<input type="checkbox" ng-model="" /><b>Quero
