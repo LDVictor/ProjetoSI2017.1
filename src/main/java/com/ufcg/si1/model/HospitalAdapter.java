@@ -1,7 +1,6 @@
 package com.ufcg.si1.model;
 
 import javax.persistence.Entity;
-import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -9,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import br.edu.ufcg.Hospital;
 
 @Entity
-@Table(name = "tb_hospital")
 public class HospitalAdapter extends UnidadeSaude {
 
 	@JsonIgnore

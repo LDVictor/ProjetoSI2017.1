@@ -11,9 +11,6 @@ app.config(function($routeProvider) {
 	}).when("/unidade/adicionaPostoSaude", {
 		templateUrl : "view/adicionarUnidadeSaude.html",
 		controller : "adicionaPostoSaude"
-	}).when("/unidade/adicionaHospital", {
-		templateUrl : "view/adicionarUnidadeSaude.html",
-		controller : "adicionaHospital"
 	}).when("/searchcomplaint", {
 		templateUrl : "view/search_complaint.html",
 		controller : "procuraQueixa"

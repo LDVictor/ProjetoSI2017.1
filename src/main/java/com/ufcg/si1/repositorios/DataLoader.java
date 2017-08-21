@@ -39,10 +39,11 @@ public class DataLoader {
 		UnidadeSaude hospital = new HospitalAdapter("Hospital Joao 23", "Prata", 100, 300);
 		Especialidade ginecologista = new Especialidade("Ginecologista");
 		Especialidade pediatria = new Especialidade("Pediatria");
-		postoSaude.adicionarEspecialidade(pediatria);
-		postoSaude.adicionarEspecialidade(ginecologista);
-		Queixa queixa1 = new Queixa("Comida Estragada", "Mateus Mangueira", "mateus@hotmail.com", "Agamenon Magalhaes", "Alto Branco",
-				"PB", "CG", TipoQueixa.ALIMENTAR);
+		Queixa queixa = new Queixa("Animal Perdido na av. Canal", "Mateus", "mateus@ccc.ufcg", "av. Canal 257",
+				"Centro", "Cavalo Manco Preto", "C. Grande", TipoQueixa.ANIMAL);
+
+		Queixa queixa2 = new Queixa("Comida Estragada no Restaurante", "Lucas Amigao", "amigao@ccc.ufcg",
+				"av. Getulio Vargas 366", "Centro", "PB", "C. Grande", TipoQueixa.ALIMENTAR);
 
 		Administrador admin1 = new Administrador("Victor", "1234"); // ab156455rt
 		Administrador admin2 = new Administrador("Mateus", "1234"); // ch478955wb
@@ -50,13 +51,17 @@ public class DataLoader {
 		Administrador admin4 = new Administrador("Lucas", "1234"); // pb990552in
 		Administrador admin5 = new Administrador("Massoni", "1234"); // yu445720ip
 		Administrador admin6 = new Administrador("Melina", "1234"); // xc781206bb
+
+		postoSaude.adicionarEspecialidade(pediatria);
+		postoSaude.adicionarEspecialidade(ginecologista);
+		this.queixaRepositorio.save(queixa);
+		this.queixaRepositorio.save(queixa2);
 		this.usRepositorio.save(postoSaude);
 		this.usRepositorio.save(postoSaude2);
 		this.usRepositorio.save(hospital);
 		this.especialidadeRepositorio.save(ginecologista);
 		this.especialidadeRepositorio.save(pediatria);
 		this.prefeituraRepositorio.save(prefeitura);
-		this.queixaRepositorio.save(queixa1);
 		this.adminRespositorio.save(admin1);
 		this.adminRespositorio.save(admin2);
 		this.adminRespositorio.save(admin3);
