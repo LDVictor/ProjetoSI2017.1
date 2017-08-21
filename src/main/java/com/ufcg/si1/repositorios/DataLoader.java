@@ -41,7 +41,7 @@ public class DataLoader {
 		Especialidade pediatria = new Especialidade("Pediatria");
 		postoSaude.adicionarEspecialidade(pediatria);
 		postoSaude.adicionarEspecialidade(ginecologista);
-		Queixa queixa1 = new Queixa("Comida Estragada", "Mateus Mangueira", "mateus@hotmail.com", "Agamenon Magalhaes",
+		Queixa queixa1 = new Queixa("Comida Estragada", "Mateus Mangueira", "mateus@hotmail.com", "Agamenon Magalhaes", "Alto Branco",
 				"PB", "CG", TipoQueixa.ALIMENTAR);
 
 		Administrador admin1 = new Administrador("Victor", "1234"); // ab156455rt

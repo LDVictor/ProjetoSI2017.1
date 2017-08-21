@@ -23,5 +23,5 @@ public interface UnidadeSaudeService {
 
 	Collection<Especialidade> procuraEspecialidadeNaUS(String descricaoEsp);
 
-	float calcularMediaMedicoPaciente(Long id);
+	double calcularMediaMedicoPaciente(Long id);
 }

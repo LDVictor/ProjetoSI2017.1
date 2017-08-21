@@ -70,8 +70,8 @@ public class UnidadeSaudeController {
 	}
 
 	@RequestMapping(value = "/geral/medicos/{id}", method = RequestMethod.GET)
-	public ResponseEntity<Float> calcularMediaMedicoPacienteDia(@PathVariable("id") Long id) {
-		float media = this.unidadeSaudeService.calcularMediaMedicoPaciente(id);
-		return new ResponseEntity<Float>(media, HttpStatus.OK);
+	public ResponseEntity<Double> calcularMediaMedicoPacienteDia(@PathVariable("id") Long id) {
+		double media = this.unidadeSaudeService.calcularMediaMedicoPaciente(id);
+		return new ResponseEntity<Double>(media, HttpStatus.OK);
 	}
 }

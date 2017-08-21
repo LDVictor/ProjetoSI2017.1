@@ -5,36 +5,32 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tb_unidadeSaude")
+@Table(name = "tb_unidade_saude")
 public abstract class UnidadeSaude {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_unidadeSaude", nullable = false, unique = true)
+	@Column(name = "id_unidade_saude", nullable = false, unique = true)
 	private Long id;
 
-	@Column(name = "descricao_UnidadeSaude")
+	@Column(name = "descricao_unidade_saude")
 	private String descricao;
 
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Especialidade> especialidades;
 
-	@Column(name = "bairro_UnidadeSaude")
+	@Column(name = "bairro_unidade_saude")
 	private String bairro;
 	
-	@Column(name = "tipo_us")
-	private String tipo;
-
 
 	public UnidadeSaude() {
 
 	}
 
-	public UnidadeSaude(String descricao, String bairro, String tipo) {
+	public UnidadeSaude(String descricao, String bairro) {
 		this.especialidades = new ArrayList<Especialidade>();
 		this.bairro = bairro;
 		this.descricao = descricao;
-		this.tipo = tipo;
 	}
 
 	public String getDescricao() {
@@ -69,7 +65,7 @@ public abstract class UnidadeSaude {
 		this.bairro = bairro;
 	}
 
-	public abstract int calculaMediaMedicoPaciente();
+	public abstract double calculaMediaMedicoPaciente();
 
 	@Override
 	public int hashCode() {

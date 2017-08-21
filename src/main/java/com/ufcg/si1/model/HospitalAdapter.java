@@ -1,34 +1,35 @@
 package com.ufcg.si1.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import br.edu.ufcg.Hospital;
 
 @Entity
 @Table(name = "tb_hospital")
 public class HospitalAdapter extends UnidadeSaude {
 
-	@Column(name = "medicos_hospital")
-	private int medicos;
-
-	@Column(name = "numero_pacientes_dia")
-	private int pacientes;
+	@JsonIgnore
+	@Transient
+	private Hospital hospital;
 
 	public HospitalAdapter() {
 
 	}
 
 	public HospitalAdapter(String descricao, String bairro, int medicos, int numPacientesDia) {
-		super(descricao, bairro, "Hospital");
-		this.medicos = medicos;
-		this.pacientes = numPacientesDia;
+		super(descricao, bairro);
+		this.hospital = new Hospital(descricao, medicos, numPacientesDia);
 	}
 
 	@Override
-	public int calculaMediaMedicoPaciente() {
-		if (this.medicos > 0) {
-			return (this.pacientes / this.medicos);
+	public double calculaMediaMedicoPaciente() {
+		if (this.hospital.getNumeroPacientesDia() > 0) {
+			return this.hospital.getNumeroMedicos() / this.hospital.getNumeroPacientesDia();
 		}
-		return 0;
+		return 0.0;
 	}
 }

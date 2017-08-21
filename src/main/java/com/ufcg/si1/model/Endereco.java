@@ -22,15 +22,19 @@ public class Endereco {
 	@Column(name = "uf_endereco")
 	private String uf;
 
+	@Column(name = "bairro_endereco")
+	private String bairro;
+
 	@Column(name = "cidade_endereco")
 	private String cidade;
 
 	public Endereco() {
-		
+
 	}
 
-	public Endereco(String rua, String uf, String cidade) {
+	public Endereco(String rua, String bairro, String uf, String cidade) {
 		this.rua = rua;
+		this.bairro = bairro;
 		this.uf = uf;
 		this.cidade = cidade;
 	}

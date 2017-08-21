@@ -7,41 +7,41 @@ import javax.persistence.Entity;
 public class PostoSaude extends UnidadeSaude {
 
 	@Column(name = "atendentes_postoSaude")
-	private int medicos;
+	private int atendentes;
 
 	@Column(name = "taxa_diaria_postoSaude")
-	private int pacientes;
+	private int taxaAtendimento;
 
 	public PostoSaude() {
 
 	}
 
-	public PostoSaude(String descricao, String bairro, int medicos, int pacientes) {
-		super(descricao, bairro, "Posto de Saúde");
-		this.medicos = medicos;
-		this.pacientes = pacientes;
+	public PostoSaude(String descricao, String bairro, int atendentes, int taxaAtendimento) {
+		super(descricao, bairro);
+		this.atendentes = atendentes;
+		this.taxaAtendimento = taxaAtendimento;
 	}
 
 	public int getMedicos() {
-		return medicos;
+		return atendentes;
 	}
 
 	public void setMedicos(int medicos) {
-		this.medicos = medicos;
+		this.atendentes = medicos;
 	}
 
 	public int getPacientes() {
-		return pacientes;
+		return taxaAtendimento;
 	}
 
 	public void setPacientes(int pacientes) {
-		this.pacientes = pacientes;
+		this.taxaAtendimento = pacientes;
 	}
 
 	@Override
-	public int calculaMediaMedicoPaciente() {
-		if (this.medicos > 0.0) {
-			return this.pacientes / this.medicos;
+	public double calculaMediaMedicoPaciente() {
+		if (this.atendentes > 0.0) {
+			return this.taxaAtendimento / this.atendentes;
 		}
 		return 0;
 	}

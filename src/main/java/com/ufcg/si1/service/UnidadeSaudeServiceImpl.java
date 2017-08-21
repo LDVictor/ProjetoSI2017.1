@@ -67,7 +67,7 @@ public class UnidadeSaudeServiceImpl implements UnidadeSaudeService {
 	}
 
 	@Override
-	public float calcularMediaMedicoPaciente(Long id) {
+	public double calcularMediaMedicoPaciente(Long id) {
 		UnidadeSaude us = this.usRepository.findOne(id);
 		LOGGER.debug("Calculando Media Medico por Paciente por Dia na Unidade de Saude " + us.getDescricao());
 		return us.calculaMediaMedicoPaciente();

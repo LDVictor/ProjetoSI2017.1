@@ -35,12 +35,13 @@ public class Queixa {
 	private Endereco endereco;
 
 	public Queixa() {
-
+		this.situacao = SituacaoQueixa.ABERTO;
 	}
 
-	public Queixa(String descricao, String nome, String email, String rua, String uf, String cidade, TipoQueixa tipo) {
+	public Queixa(String descricao, String nome, String email, String rua, String bairro, String uf, String cidade,
+			TipoQueixa tipo) {
 		this.solicitante = new Pessoa(nome, email);
-		this.endereco = new Endereco(rua, uf, cidade);
+		this.endereco = new Endereco(rua, bairro, uf, cidade);
 		this.descricao = descricao;
 		this.situacao = SituacaoQueixa.ABERTO;
 		this.tipo = tipo;
