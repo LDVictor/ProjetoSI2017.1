@@ -30,7 +30,7 @@ app.config(function($routeProvider) {
 		templateUrl : "view/search_average_per_patient.html",
 		controller : "procuraMediaMedicoPaciente"
 	}).when("/modificaoprefeitura/", {
-		templateUrl : "view/sucessPageModificaPrefeitura.html"
+		templateUrl : "view/sucessPageModificaSituacaoPrefeitura.html"
 	}).when("createdespecialidade/:id", {
 		templateUrl : "/view/sucessPageEspecialidade.html",
 		controller : "mensagemCriacaoEspecialidade"
