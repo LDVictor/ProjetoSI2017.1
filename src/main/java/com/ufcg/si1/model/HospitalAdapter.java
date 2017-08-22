@@ -1,5 +1,6 @@
 package com.ufcg.si1.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
 
@@ -24,6 +25,7 @@ public class HospitalAdapter extends UnidadeSaude {
 	}
 
 	@Override
+	@Column(name = "media_medicos_hospital")
 	public double calculaMediaMedicoPaciente() {
 		if (this.hospital.getNumeroPacientesDia() > 0) {
 			return this.hospital.getNumeroMedicos() / this.hospital.getNumeroPacientesDia();
