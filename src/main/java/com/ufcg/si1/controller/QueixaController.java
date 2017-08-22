@@ -8,6 +8,7 @@ import com.ufcg.si1.service.interfaces.QueixaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -21,7 +22,7 @@ public class QueixaController {
 
 	@Autowired
 	private QueixaService queixaService = new QueixaServiceImpl();
-	
+
 	@RequestMapping(value = "/queixa/listarTodasQueixas", method = RequestMethod.GET)
 	public ResponseEntity<Collection<Queixa>> listaTodasQueixas() {
 		Collection<Queixa> queixas = queixaService.getQueixas();
@@ -32,7 +33,7 @@ public class QueixaController {
 		return new ResponseEntity<Collection<Queixa>>(queixas, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/queixa/", method = RequestMethod.POST)
+	@RequestMapping(value = "/queixa/", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Queixa> abrirQueixa(@RequestBody Queixa queixa, UriComponentsBuilder ucBuilder) {
 
 		this.queixaService.addQueixa(queixa);
@@ -41,7 +42,9 @@ public class QueixaController {
 		return new ResponseEntity<Queixa>(queixa, HttpStatus.CREATED);
 	}
 
-	@RequestMapping(value = "/queixa/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/queixa/{id}", method = RequestMethod.GET,
+
+			produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Queixa> consultarQueixa(@PathVariable("id") Long id) {
 
 		Queixa queixa = queixaService.procuraQueixaId(id);

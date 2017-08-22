@@ -17,21 +17,19 @@ public class Queixa {
 	@Column(name = "descricao_queixa")
 	private String descricao;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Pessoa solicitante;
 
 	@Column(name = "comentario_queixa")
 	private String comentario;
 
 	@Column(name = "tipo_queixa")
-	@Enumerated(EnumType.STRING)
 	private TipoQueixa tipo;
 
 	@Column(name = "situacao_queixa")
-	@Enumerated(EnumType.STRING)
 	private SituacaoQueixa situacao;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Endereco endereco;
 
 	public Queixa() {
@@ -123,6 +121,8 @@ public class Queixa {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
+	
+	
 
 	@Override
 	public int hashCode() {

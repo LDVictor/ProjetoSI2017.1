@@ -8,6 +8,9 @@ app.config(function($routeProvider) {
 	}).when("/addespecialidade", {
 		templateUrl : "view/addEspecialidade.html",
 		controller : "addEspecialidade"
+	}).when("/unidade/adicionaHospital", {
+		templateUrl : "view/adicionarUnidadeSaude.html",
+		controller : "adicionaHospital"
 	}).when("/unidade/adicionaPostoSaude", {
 		templateUrl : "view/adicionarUnidadeSaude.html",
 		controller : "adicionaPostoSaude"
