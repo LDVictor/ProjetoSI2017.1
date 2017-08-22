@@ -8,7 +8,6 @@ import com.ufcg.si1.service.interfaces.QueixaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -33,7 +32,7 @@ public class QueixaController {
 		return new ResponseEntity<Collection<Queixa>>(queixas, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/queixa/", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/queixa/", method = RequestMethod.POST)
 	public ResponseEntity<Queixa> abrirQueixa(@RequestBody Queixa queixa, UriComponentsBuilder ucBuilder) {
 
 		this.queixaService.addQueixa(queixa);
@@ -42,9 +41,7 @@ public class QueixaController {
 		return new ResponseEntity<Queixa>(queixa, HttpStatus.CREATED);
 	}
 
-	@RequestMapping(value = "/queixa/{id}", method = RequestMethod.GET,
-
-			produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/queixa/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Queixa> consultarQueixa(@PathVariable("id") Long id) {
 
 		Queixa queixa = queixaService.procuraQueixaId(id);
