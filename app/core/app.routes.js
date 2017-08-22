@@ -31,7 +31,7 @@ app.config(function($routeProvider) {
 		controller : "procuraMediaMedicoPaciente"
 	}).when("/modificaoprefeitura/", {
 		templateUrl : "view/sucessPageModificaSituacaoPrefeitura.html"
-	}).when("createdespecialidade/:id", {
+	}).when("/createdespecialidade/:id", {
 		templateUrl : "/view/sucessPageEspecialidade.html",
 		controller : "mensagemCriacaoEspecialidade"
 	}).when("/createdcomplaint/:id", {

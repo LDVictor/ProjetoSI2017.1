@@ -2,7 +2,6 @@ package com.ufcg.si1.controller;
 
 import com.ufcg.si1.model.*;
 import com.ufcg.si1.model.enums.SituacaoGeralQueixas;
-import com.ufcg.si1.service.QueixaServiceImpl;
 import com.ufcg.si1.service.interfaces.QueixaService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,7 @@ import java.util.Collection;
 public class QueixaController {
 
 	@Autowired
-	private QueixaService queixaService = new QueixaServiceImpl();
+	private QueixaService queixaService;
 
 	@RequestMapping(value = "/queixa/listarTodasQueixas", method = RequestMethod.GET)
 	public ResponseEntity<Collection<Queixa>> listaTodasQueixas() {

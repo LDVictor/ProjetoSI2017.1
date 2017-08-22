@@ -4,7 +4,7 @@ app.controller("addEspecialidade", function ($scope, $http, toastr, $location) {
         $http.post("http://localhost:5000/DisqueSaudeApp/api/especialidade/",
             JSON.stringify(especialidade)).then(function success(response) {
             toastr.success("Especialidade adicionada com sucesso!");
-            $location.path('/createdespecialidade/' + response.data.id);
+            $location.path('/createdespecialidade/');
         }, function error(error) {
 
             alert("Problemas ao tentar adicionar especialidade.");

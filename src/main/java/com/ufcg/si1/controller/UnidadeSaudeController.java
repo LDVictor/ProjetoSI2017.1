@@ -18,7 +18,6 @@ import com.ufcg.si1.model.Especialidade;
 import com.ufcg.si1.model.HospitalAdapter;
 import com.ufcg.si1.model.PostoSaude;
 import com.ufcg.si1.model.UnidadeSaude;
-import com.ufcg.si1.service.UnidadeSaudeServiceImpl;
 import com.ufcg.si1.service.interfaces.UnidadeSaudeService;
 
 @RestController
@@ -27,15 +26,15 @@ import com.ufcg.si1.service.interfaces.UnidadeSaudeService;
 public class UnidadeSaudeController {
 
 	@Autowired
-	private UnidadeSaudeService unidadeSaudeService = new UnidadeSaudeServiceImpl();
+	private UnidadeSaudeService unidadeSaudeService;
 
 	@RequestMapping(value = "/especialidade/unidades/{descricao}", method = RequestMethod.GET)
-	public ResponseEntity<Collection<Especialidade>> consultaEspecialidadeNaUnidadeSaude(
+	public ResponseEntity<Collection<UnidadeSaude>> consultaEspecialidadeNaUnidadeSaude(
 			@PathVariable String descricao) {
 
-		Collection<Especialidade> especialidades = this.unidadeSaudeService.procuraEspecialidadeNaUS(descricao);
+		Collection<UnidadeSaude> unidadesDeSaude = this.unidadeSaudeService.procuraEspecialidadeNaUS(descricao);
 
-		return new ResponseEntity<Collection<Especialidade>>(especialidades, HttpStatus.OK);
+		return new ResponseEntity<Collection<UnidadeSaude>>(unidadesDeSaude, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/unidade/listartodasus", method = RequestMethod.GET)

@@ -2,7 +2,6 @@ package com.ufcg.si1.service.interfaces;
 
 import java.util.Collection;
 
-import com.ufcg.si1.model.Especialidade;
 import com.ufcg.si1.model.UnidadeSaude;
 
 public interface UnidadeSaudeService {
@@ -21,7 +20,7 @@ public interface UnidadeSaudeService {
 
 	Collection<UnidadeSaude> procuraUSpeloBairro(String bairro);
 
-	Collection<Especialidade> procuraEspecialidadeNaUS(String descricaoEsp);
+	Collection<UnidadeSaude> procuraEspecialidadeNaUS(String descricaoEsp);
 
 	double calcularMediaMedicoPaciente(Long id);
 }

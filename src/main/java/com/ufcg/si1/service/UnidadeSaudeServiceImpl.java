@@ -10,7 +10,9 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @Service("unidadeSaudeService")
 public class UnidadeSaudeServiceImpl implements UnidadeSaudeService {
@@ -74,8 +76,20 @@ public class UnidadeSaudeServiceImpl implements UnidadeSaudeService {
 	}
 
 	@Override
-	public Collection<Especialidade> procuraEspecialidadeNaUS(String descricaoEsp) {
+	// Gambiarrinha basica poderosa kkkk
+	public Collection<UnidadeSaude> procuraEspecialidadeNaUS(String descricaoEsp) {
 		LOGGER.debug("Retornando Unidades de Saude que atende a Especialidade: " + descricaoEsp);
-		return this.usRepository.findByDescricao(descricaoEsp);
+		List<UnidadeSaude> us = this.usRepository.findAll();
+		List<UnidadeSaude> retorno = new ArrayList<UnidadeSaude>();
+		for (UnidadeSaude unidadeSaude : us) {
+			for (Especialidade especialidade : unidadeSaude.getEspecialidades()) {
+				if (especialidade.getDescricao().equalsIgnoreCase(descricaoEsp)) {
+					retorno.add(unidadeSaude);
+				}
+
+			}
+		}
+		return retorno;
 	}
+
 }
