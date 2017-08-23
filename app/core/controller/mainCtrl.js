@@ -18,7 +18,7 @@ app.controller("login", function ($scope, $location) {
     $scope.logarComoAdmin = function (adLogin, adSenha) {
         var adminLogin = {login: adLogin, senha: adSenha};
         var promise = $http.post("http://localhost:5000/DisqueSaudeApp/api/administrador/login", adminLogin).then(function(response) {
-            $scope.usuario = response.data;
+            var admin = response.data;
             alert("Administrador autenticado com sucesso!");
             $location.path('/login/admin');
     }, function failed(error) {
