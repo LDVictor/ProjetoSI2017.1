@@ -21,7 +21,7 @@ public class AdministradorServiceImpl {
     }
 
     public Administrador logar(String login, String senha) {
-        List<Administrador> admins = AdministradorRepositorio.findAll();
+        List<Administrador> admins = adminRepositorio.findAll();
         for (Administrador admin : admins) {
             if (admin.getLogin().equals(login)) {
                 if(admin.getSenha().equals(senha)) {

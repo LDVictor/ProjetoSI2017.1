@@ -48,8 +48,8 @@
       <file leaf-file-name="AdministradorServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ufcg/si1/service/AdministradorServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="49" lean-forward="true" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+            <state relative-caret-position="391">
+              <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#581#582#0" expanded="true" />
@@ -935,12 +935,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1503494870838</updated>
-      <workItem from="1503494876359" duration="2934000" />
+      <workItem from="1503494876359" duration="3020000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2934000" />
+    <option name="totallyTimeSpent" value="3020000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1101,8 +1101,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ufcg/si1/service/AdministradorServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="49" lean-forward="true" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+        <state relative-caret-position="391">
+          <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#581#582#0" expanded="true" />
