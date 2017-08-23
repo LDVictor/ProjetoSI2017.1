@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.Collection;
 import java.util.List;
 
-@Service("especialidadeService")
+@Service("AdministradorServiceImpl")
 public class AdministradorServiceImpl {
     @Autowired
     private AdministradorRepositorio adminRepositorio;
