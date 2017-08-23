@@ -14,10 +14,10 @@ app.controller("modificaSituacaoPrefeitura", function ($scope, $http, toastr, $l
 });
 
 
-app.controller("login", function ($scope, $location) {
+app.controller("login", function ($scope, $location, $http) {
     $scope.logarComoAdmin = function (adLogin, adSenha) {
         var adminLogin = {login: adLogin, senha: adSenha};
-        var promise = $http.post("http://localhost:5000/DisqueSaudeApp/api/administrador/login", adminLogin).then(function(response) {
+        var promise = $http.post("http://localhost:5000/DisqueSaudeApp/api/admin/login", adminLogin).then(function(response) {
             var admin = response.data;
             alert("Administrador autenticado com sucesso!");
             $location.path('/login/admin');
