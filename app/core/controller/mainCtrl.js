@@ -15,16 +15,18 @@ app.controller("modificaSituacaoPrefeitura", function ($scope, $http, toastr, $l
 
 
 app.controller("login", function ($scope, $location) {
-    $scope.logarComoAdmin = function (nome, codacesso) {
-        if (codacesso == "1234") {
+    $scope.logarComoAdmin = function (adLogin, adSenha) {
+        var adminLogin = {login: adLogin, senha: adSenha};
+        var promise = $http.post("http://localhost:5000/DisqueSaudeApp/api/administrador/login", adminLogin).then(function(response) {
+            $scope.usuario = response.data;
             alert("Administrador autenticado com sucesso!");
             $location.path('/login/admin');
-        } else {
-            alert("Erro na autenticação!");
-        }
+    }, function failed(error) {
+            alert("Email ou senha incorretos.");
+            console.log(error);
     }
+    )}
 });
-
 
 
 

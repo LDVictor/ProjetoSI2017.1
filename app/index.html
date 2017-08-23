@@ -63,23 +63,23 @@
 					<div class="row">
 						<div class="input-group input alinhaform">
 							<p>
-								<b> Nome:</b>
+								<b> Login:</b>
 							</p>
-							<input ng-model="nome" type="text"
+							<input ng-model="login" type="text"
 								class="form-control alinhacentro" placeholder="Usuario">
 						</div>
 						<h1></h1>
 						<div class="input-group input alinhaform">
 							<p>
-								<b> Código de Acesso:</b>
+								<b> Senha:</b>
 							</p>
-							<input ng-model="codacesso" type="password"
+							<input ng-model="senha" type="password"
 								class="form-control alinhacentro" placeholder="********">
 						</div>
 						<h1></h1>
 						<div class="input-group-btn">
 							<button class="btn btn-basic" type="submit"
-								ng-click="logarComoAdmin(nome, codacesso)" data-dismiss="modal">
+								ng-click="logarComoAdmin(login, senha)" data-dismiss="modal">
 								<i> Enviar</i>
 							</button>
 						</div>
