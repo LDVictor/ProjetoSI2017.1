@@ -3,12 +3,9 @@ package com.ufcg.si1.service;
 import com.ufcg.si1.model.Administrador;
 import com.ufcg.si1.repositorios.AdministradorRepositorio;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
 import java.util.List;
 
 @Service("AdministradorServiceImpl")
