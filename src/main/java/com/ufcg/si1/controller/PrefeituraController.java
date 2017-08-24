@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ufcg.si1.service.interfaces.PrefeituraService;
-import com.ufcg.si1.service.strategy.prefeituraSituacao.SituacaoPrefeitura;
 
 @RestController
 @RequestMapping("/api")
@@ -20,8 +19,8 @@ public class PrefeituraController {
 	private PrefeituraService prefeituraService;
 	
 	@RequestMapping(value = "/prefeitura/", method = RequestMethod.POST)
-	public void modificarSituacaoPrefeitura(SituacaoPrefeitura situacao) {
-		this.prefeituraService.modificaSituacaoPrefeitura(situacao);
+	public void modificarSituacaoPrefeitura(String situacaoPrefeitura) {
+		this.prefeituraService.modificaSituacaoPrefeitura(situacaoPrefeitura);
 		new ResponseEntity<>(HttpStatus.OK);
 	}
 }

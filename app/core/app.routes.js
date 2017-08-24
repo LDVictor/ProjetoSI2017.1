@@ -29,7 +29,7 @@ app.config(function($routeProvider) {
 	}).when("/searchaverage", {
 		templateUrl : "view/search_average_per_patient.html",
 		controller : "procuraMediaMedicoPaciente"
-	}).when("/modificaoprefeitura/", {
+	}).when("/modificaPrefeitura/", {
 		templateUrl : "view/sucessPageModificaSituacaoPrefeitura.html"
 	}).when("/createdespecialidade/:id", {
 		templateUrl : "/view/sucessPageEspecialidade.html",

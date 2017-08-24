@@ -1,11 +1,10 @@
 
 app.controller("modificaSituacaoPrefeitura", function ($scope, $http, toastr, $location) {
 
-    $scope.modificaSituacaoPrefeitura = function (situacaoPrefeitura) {
-        $http.post("http://localhost:5000/DisqueSaudeApp/api/prefeitura/",
-            JSON.stringify(situacaoPrefeitura)).then(function success(response) {
+    $scope.modificaSituacaoPrefeitura = function (situacao) {
+        $http.post("http://localhost:5000/DisqueSaudeApp/api/prefeitura/", situacao).then(function success(response) {
             toastr.success("Prefeitura modificada com sucesso!");
-            $location.path('/modificaoprefeitura/');
+            $location.path('/modificaPrefeitura/');
         }, function error(error) {
             console.log(error);
             console.log("Problemas ao tentar modificar Prefeitura.");

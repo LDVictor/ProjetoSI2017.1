@@ -1,16 +1,16 @@
 package com.ufcg.si1.model.enums;
 
-public enum TipoQueixa {
+public enum QueixaTipo {
 	ANIMAL("Animal"), ALIMENTAR("Alimentar"), SERVICO_GERAL("Serviço Geral");
 
-	private final String tipoQueixa;
+	private final String queixaTipo;
 
-	TipoQueixa(String tipoQueixa) {
-		this.tipoQueixa = tipoQueixa;
+	QueixaTipo(String queixaTipo) {
+		this.queixaTipo = queixaTipo;
 	}
 
 	public String getTipoQueixa() {
-		return tipoQueixa;
+		return queixaTipo;
 	}
 	
 	

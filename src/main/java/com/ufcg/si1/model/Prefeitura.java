@@ -9,6 +9,8 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import com.ufcg.si1.model.enums.SituacaoGeralQueixas;
+import com.ufcg.si1.service.strategy.prefeituraSituacao.SituacaoCaos;
+import com.ufcg.si1.service.strategy.prefeituraSituacao.SituacaoExtra;
 import com.ufcg.si1.service.strategy.prefeituraSituacao.SituacaoNormal;
 import com.ufcg.si1.service.strategy.prefeituraSituacao.SituacaoPrefeitura;
 
@@ -43,6 +45,18 @@ public class Prefeitura {
 
 	public void setSituacao(SituacaoPrefeitura situacao) {
 		this.situacao = situacao;
+	}
+	
+	public void setSituacaoNormal() {
+		this.situacao = new SituacaoNormal();
+	}
+	
+	public void setSituacaoExtra() {
+		this.situacao = new SituacaoExtra();
+	}
+	
+	public void setSituacaoCaos() {
+		this.situacao = new SituacaoCaos();
 	}
 
 	public SituacaoGeralQueixas getSituacaoDasQueixas(double porcentagemQueixasAbertas) {

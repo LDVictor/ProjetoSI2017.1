@@ -2,15 +2,15 @@ package com.ufcg.si1.model.enums;
 
 public enum SituacaoGeralQueixas {
 	
-	RUIM(0), REGULAR(1), BOM(2);
+	RUIM("Ruim"), REGULAR("Regular"), BOM("Bom");
 	
-	private final int situacao;
+	private final String situacaoGeralQueixas;
 
-    SituacaoGeralQueixas(int situacao) {
-        this.situacao = situacao;
+    SituacaoGeralQueixas(String situacaoGeralQueixas) {
+        this.situacaoGeralQueixas = situacaoGeralQueixas;
     }
 
-	public int getSituacao() {
-		return situacao;
+	public String getSituacao() {
+		return situacaoGeralQueixas;
 	}
 }

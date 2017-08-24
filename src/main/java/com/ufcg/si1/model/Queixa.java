@@ -2,8 +2,8 @@ package com.ufcg.si1.model;
 
 import javax.persistence.*;
 
-import com.ufcg.si1.model.enums.SituacaoQueixa;
-import com.ufcg.si1.model.enums.TipoQueixa;
+import com.ufcg.si1.model.enums.QueixaSituacao;
+import com.ufcg.si1.model.enums.QueixaTipo;
 
 @Entity
 @Table(name = "tb_queixa")
@@ -24,24 +24,24 @@ public class Queixa {
 	private String comentario;
 
 	@Column(name = "tipo_queixa")
-	private TipoQueixa tipo;
+	private QueixaTipo tipo;
 
 	@Column(name = "situacao_queixa")
-	private SituacaoQueixa situacao;
+	private QueixaSituacao situacao;
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Endereco endereco;
 
 	public Queixa() {
-		this.situacao = SituacaoQueixa.ABERTO;
+		this.situacao = QueixaSituacao.ABERTA;
 	}
 
 	public Queixa(String descricao, String nome, String email, String rua, String bairro, String uf, String cidade,
-			TipoQueixa tipo) {
+			QueixaTipo tipo) {
 		this.solicitante = new Pessoa(nome, email);
 		this.endereco = new Endereco(rua, bairro, uf, cidade);
 		this.descricao = descricao;
-		this.situacao = SituacaoQueixa.ABERTO;
+		this.situacao = QueixaSituacao.ABERTA;
 		this.tipo = tipo;
 		this.comentario = "";
 	}
@@ -62,40 +62,40 @@ public class Queixa {
 		this.descricao = descricao;
 	}
 
-	public SituacaoQueixa getSituacao() {
+	public QueixaSituacao getSituacao() {
 		return this.situacao;
 	}
 
-	public void setSituacao(SituacaoQueixa situacao) {
+	public void setSituacao(QueixaSituacao situacao) {
 		this.situacao = situacao;
 	}
 
-	public TipoQueixa getTipo() {
+	public QueixaTipo getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(TipoQueixa tipo) {
+	public void setTipo(QueixaTipo tipo) {
 		this.tipo = tipo;
 	}
 
 	public void abrir() {
 		if (this.verificaSituacaoAbrir())
-			this.setSituacao(SituacaoQueixa.ABERTO);
+			this.setSituacao(QueixaSituacao.ABERTA);
 	}
 
 	private boolean verificaSituacaoAbrir() {
-		return this.getSituacao() != SituacaoQueixa.EM_ANDAMENTO;
+		return this.getSituacao() != QueixaSituacao.EM_ANDAMENTO;
 	}
 
 	public void fechar(String coment) {
 		if (this.verificaSituacaoFechar()) {
-			this.setSituacao(SituacaoQueixa.FECHADO);
+			this.setSituacao(QueixaSituacao.FECHADA);
 			this.comentario = coment;
 		}
 	}
 
 	private boolean verificaSituacaoFechar() {
-		return this.getSituacao() == SituacaoQueixa.EM_ANDAMENTO || this.getSituacao() == SituacaoQueixa.ABERTO;
+		return this.getSituacao() == QueixaSituacao.EM_ANDAMENTO || this.getSituacao() == QueixaSituacao.ABERTA;
 	}
 
 	public String getComentario() {

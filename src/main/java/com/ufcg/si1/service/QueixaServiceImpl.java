@@ -3,7 +3,7 @@ package com.ufcg.si1.service;
 import com.ufcg.si1.model.Prefeitura;
 import com.ufcg.si1.model.Queixa;
 import com.ufcg.si1.model.enums.SituacaoGeralQueixas;
-import com.ufcg.si1.model.enums.SituacaoQueixa;
+import com.ufcg.si1.model.enums.QueixaSituacao;
 import com.ufcg.si1.repositorios.QueixaRepositorio;
 import com.ufcg.si1.service.interfaces.QueixaService;
 
@@ -80,8 +80,11 @@ public class QueixaServiceImpl implements QueixaService {
 		return situacao;
 	}
 
-	@Override
-	public long quantidadeQueixasAbertas() {
-		return this.queixaRepository.countBySituacao(SituacaoQueixa.ABERTO);
+	public double quantidadeQueixasAbertas() {
+		double queixasAbertas = 0;
+		for (Queixa queixa : getQueixas()) {
+			if(queixa.getSituacao() == QueixaSituacao.ABERTA) { queixasAbertas++; }
+		}
+		return queixasAbertas;
 	}
 }

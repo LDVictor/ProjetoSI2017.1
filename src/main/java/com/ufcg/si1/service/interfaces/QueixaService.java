@@ -21,6 +21,6 @@ public interface QueixaService {
 
 	public void deletaTodasQueixas();
 	
-	public long quantidadeQueixasAbertas();
+	public double quantidadeQueixasAbertas();
 
 }
