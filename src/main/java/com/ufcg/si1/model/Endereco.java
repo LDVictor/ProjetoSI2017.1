@@ -59,6 +59,14 @@ public class Endereco {
 		return this.cidade;
 	}
 
+	public String getBairro() {
+		return bairro;
+	}
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

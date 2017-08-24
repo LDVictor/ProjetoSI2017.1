@@ -1,4 +1,3 @@
-
 app.controller("modificaSituacaoPrefeitura", function ($scope, $http, toastr, $location) {
 
     $scope.modificaSituacaoPrefeitura = function (situacao) {
@@ -13,7 +12,7 @@ app.controller("modificaSituacaoPrefeitura", function ($scope, $http, toastr, $l
 });
 
 
-app.controller("login", function ($scope, $location, $http) {
+app.controller("login", function ($rootScope, $scope, $location, $http) {
     $scope.logarComoAdmin = function (adLogin, adSenha) {
         var adminLogin = {login: adLogin, senha: adSenha};
         var promise = $http.post("http://localhost:5000/DisqueSaudeApp/admin/login", adminLogin).then(function(response) {

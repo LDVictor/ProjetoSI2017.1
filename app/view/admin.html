@@ -1,10 +1,62 @@
-<nav class="navbar navbar-default">
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="vs">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Disque Saúde</title>
+	<meta name="description" content="Disque Saúde - SI1 2017.1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet"
+		  href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet"
+		  href="bower_components/jquery-ui/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet"
+		  href="bower_components/components-font-awesome/css/font-awesome.css">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="stylesheet" href="assets/css/searchHealthUnit.css">
+	<link rel="stylesheet" type="text/css"
+		  href="bower_components/angular-toastr/dist/angular-toastr.css"/>
+
+</head>
+
+<body><nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<a class="navbar-brand">Área do Administrador</a>
 		</div>
 	</div>
 </nav>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<nav class="navbar navbar-inverse">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#/!"><i class="fa fa-medkit"
+															  aria-hidden="true"></i> DS</a>
+					</div>
+					<ul class="nav navbar-nav">
+						<li><a href="" data-toggle="modal"
+							   data-target="#logarComoAdmin{{$index}}" ng-show="logado == false"><i
+								class="fa fa-edit"></i> Entrar como Administrador</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#!search_health_unit"><i
+								class="fa fa-search"></i> Consultar Unidade de Saúde</a></li>
+						<li><a href="#!consultarEspecialidade"><i
+								class="fa fa-search"></i> Consultar Especialidade Médica</a></li>
+						<li><a href="#!searchcomplaint"><i class="fa fa-search"></i>
+							Pesquisar Queixa</a></li>
+						<li><a href="#!/complaint/register"><i
+								class="fa fa-plus"></i> Adicionar Queixa</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+</div>
 
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
@@ -49,10 +101,6 @@
 							informações</button>
 					</td>
 					<td>
-						<button type="submit" class="btn-danger"
-							ng-click="apagarQueixa(queixa)">Fechar Queixa</button>
-					</td>
-					<td>
 						<div id="informacoesDaQueixa{{$index}}" class="modal fade"
 							role="dialog">
 							<div class="modal-dialog modal-lg">
@@ -89,9 +137,15 @@
 													class="form-control alinhacentro" placeholder="Comentários">
 											</div>
 											<h1></h1>
+											<input type="radio" ng-model="status" value="ABERTO" /><b>Aberto</b>
+											<h1></h1>
+											<input type="radio" ng-model="status" value="FECHADO" /><b>Fechado</b>
+											<h1></h1>
+											<input type="radio" ng-model="status" value="EM_ANDAMENTO" /><b>Em Andamento</b>
+											<h1></h1>
 											<div class="input-group-btn">
 												<button class="btn btn-basic" type="submit"
-													ng-click="adicionaComentario(queixa, comentario)"
+													ng-click="alterarQueixa(queixa, comentario, status)"
 													data-dismiss="modal">
 													<i>Enviar</i>
 												</button>
@@ -108,3 +162,4 @@
 	</nav>
 </div>
 </nav>
+</body>
