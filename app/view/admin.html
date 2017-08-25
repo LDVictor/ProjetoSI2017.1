@@ -75,7 +75,7 @@
 						</td>
 						<td>
 							<div id="informacoesDaQueixa{{$index}}" class="modal fade"
-								role="dialog">
+								role="dialog" ng-controller="atualizaQueixaCtrl">
 								<div class="modal-dialog modal-lg">
 									<!-- Modal content-->
 									<div class="modal-content">
@@ -111,16 +111,16 @@
 														placeholder="Comentários">
 												</div>
 												<h1></h1>
-												<input type="radio" ng-model="status" value="ABERTO" /><b>Aberto</b>
+												<input type="radio" ng-model="status" value="QueixaSituacao.ABERTO" /><b>Aberto</b>
 												<h1></h1>
-												<input type="radio" ng-model="status" value="FECHADO" /><b>Fechado</b>
+												<input type="radio" ng-model="status" value="QueixaSituacao.FECHADO" /><b>Fechado</b>
 												<h1></h1>
-												<input type="radio" ng-model="status" value="EM_ANDAMENTO" /><b>Em
+												<input type="radio" ng-model="status" value="QueixaSituacao.EM_ANDAMENTO" /><b>Em
 													Andamento</b>
 												<h1></h1>
 												<div class="input-group-btn">
 													<button class="btn btn-basic" type="submit"
-														ng-click="alterarQueixa(queixa, comentario, status)"
+														ng-click="atualizarQueixa(queixa, comentario, status)"
 														data-dismiss="modal">
 														<i>Enviar</i>
 													</button>

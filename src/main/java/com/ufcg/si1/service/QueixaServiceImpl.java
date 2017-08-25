@@ -29,16 +29,14 @@ public class QueixaServiceImpl implements QueixaService {
 	}
 
 	@Override
-	public boolean atualizaQueixa(Queixa queixa) {
+	public Queixa atualizaQueixa(Queixa queixa, String comentario, QueixaSituacao queixaSituacao) {
 		if (this.queixaRepository.exists(queixa.getId())) {
 			LOGGER.debug("Atualizando Queixa " + queixa.getDescricao());
-			queixa.setDescricao(queixa.getDescricao());
-			queixa.setComentario(queixa.getComentario());
-			queixa.setSituacao(queixa.getSituacao());
-			this.queixaRepository.save(queixa);
-			return true;
+			queixa.setComentario(comentario);
+			queixa.setSituacao(queixaSituacao);
+			return this.queixaRepository.save(queixa);
 		}
-		return false;
+		return null;
 	}
 
 	@Override

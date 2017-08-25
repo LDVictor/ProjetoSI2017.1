@@ -12,13 +12,12 @@ app.controller("registraQueixa", function ($scope, $http, toastr, $location) {
 });
 
 
-app.controller("atualizaQueixa", function ($scope, $http, toastr, $location) {
+app.controller("atualizaQueixaCtrl", function ($scope, $http) {
 
-    $scope.atualizarQueixa = function (complaint) {
-        $http.post("http://localhost:5000/DisqueSaudeApp/api/queixa/" + id,
-            JSON.stringify(complaint)).then(function success(response) {
+    $scope.atualizarQueixa = function (queixa) {
+        $http.post("http://localhost:5000/DisqueSaudeApp/api/queixa/atualizaQueixa", queixa).then(function(response) {
+            console.log(queixa);
             toastr.success("Queixa atualizada com sucesso!");
-            $location.path('/updatedcomplaint/' + response.data.id);
         }, function error(error) {
             alert("Problemas ao tentar atualizar queixa.");
         });

@@ -1,6 +1,7 @@
 package com.ufcg.si1.controller;
 
 import com.ufcg.si1.model.*;
+import com.ufcg.si1.model.enums.QueixaSituacao;
 import com.ufcg.si1.model.enums.SituacaoGeralQueixas;
 import com.ufcg.si1.service.interfaces.QueixaService;
 
@@ -47,10 +48,10 @@ public class QueixaController {
 		return new ResponseEntity<Queixa>(queixa, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/queixa/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Queixa> atualizarQueixa(@PathVariable("id") Long id, @RequestBody Queixa queixa) {
+	@RequestMapping(value = "/queixa/atualizaQueixa", method = RequestMethod.PUT)
+	public ResponseEntity<Queixa> atualizarQueixa(@RequestBody Queixa queixa, String comentario, QueixaSituacao queixaSituacao) {
 
-		queixaService.atualizaQueixa(queixa);
+		queixaService.atualizaQueixa(queixa, comentario, queixaSituacao);
 		return new ResponseEntity<Queixa>(queixa, HttpStatus.OK);
 	}
 
@@ -59,13 +60,6 @@ public class QueixaController {
 
 		queixaService.deletaQueixaId(id);
 		return new ResponseEntity<Queixa>(HttpStatus.NO_CONTENT);
-	}
-
-	@RequestMapping(value = "/queixa/fechamento", method = RequestMethod.POST)
-	public ResponseEntity<Queixa> fecharQueixa(@RequestBody Queixa queixaAFechar) {
-
-		queixaService.atualizaQueixa(queixaAFechar);
-		return new ResponseEntity<Queixa>(queixaAFechar, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/geral/situacao", method = RequestMethod.GET)
