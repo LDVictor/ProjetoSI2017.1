@@ -18,7 +18,7 @@ public interface QueixaService {
 
 	Queixa addQueixa(Queixa queixa);
 
-	Queixa atualizaQueixa(Queixa queixa, String comentario, QueixaSituacao queixaSituacao);
+	Queixa atualizaQueixa(Long id, String comentario, QueixaSituacao queixaSituacao);
 
 	public void deletaTodasQueixas();
 

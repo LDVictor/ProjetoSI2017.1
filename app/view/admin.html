@@ -75,7 +75,7 @@
 						</td>
 						<td>
 							<div id="informacoesDaQueixa{{$index}}" class="modal fade"
-								role="dialog" ng-controller="atualizaQueixaCtrl">
+								role="dialog" ng-controller="atualizarQueixaCtrl">
 								<div class="modal-dialog modal-lg">
 									<!-- Modal content-->
 									<div class="modal-content">
@@ -120,7 +120,7 @@
 												<h1></h1>
 												<div class="input-group-btn">
 													<button class="btn btn-basic" type="submit"
-														ng-click="atualizarQueixa(queixa, comentario, status)"
+														ng-click="atualizarQueixa(queixa.id, comentario, status)"
 														data-dismiss="modal">
 														<i>Enviar</i>
 													</button>

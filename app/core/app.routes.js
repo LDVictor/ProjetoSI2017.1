@@ -47,9 +47,6 @@ app.config(function($routeProvider) {
 	}).when("/login/admin", {
 		templateUrl : "/view/admin.html",
 		controller : "retornaQueixasCtrl"
-    }).when("/login/admin/api/queixa/atualizaQueixa", {
-        templateUrl : "/view/admin.html",
-        controller : "atualizaQueixaCtrl"
 	}).when("/login/listaUnidadeSaude", {
 		templateUrl : "/view/listaUnidadeSaude.html",
 		controller : "retornaUnidadeSaudeCtrl"

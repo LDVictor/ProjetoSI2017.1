@@ -48,10 +48,12 @@ public class QueixaController {
 		return new ResponseEntity<Queixa>(queixa, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/queixa/atualizaQueixa", method = RequestMethod.PUT)
-	public ResponseEntity<Queixa> atualizarQueixa(@RequestBody Queixa queixa, String comentario, QueixaSituacao queixaSituacao) {
+	@RequestMapping(value = "/queixa/atualizaQueixa/{id}", method = RequestMethod.GET)
+	public ResponseEntity<Queixa> atualizarQueixa(@PathVariable Long id, String comentario,
+			QueixaSituacao queixaSituacao) {
 
-		queixaService.atualizaQueixa(queixa, comentario, queixaSituacao);
+		Queixa queixa = this.queixaService.atualizaQueixa(id, comentario, queixaSituacao);
+	
 		return new ResponseEntity<Queixa>(queixa, HttpStatus.OK);
 	}
 
