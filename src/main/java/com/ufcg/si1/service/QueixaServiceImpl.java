@@ -80,11 +80,7 @@ public class QueixaServiceImpl implements QueixaService {
 		return situacao;
 	}
 
-	public double quantidadeQueixasAbertas() {
-		double queixasAbertas = 0;
-		for (Queixa queixa : getQueixas()) {
-			if(queixa.getSituacao() == QueixaSituacao.ABERTA) { queixasAbertas++; }
-		}
-		return queixasAbertas;
+	private double quantidadeQueixasAbertas() {
+		return this.queixaRepository.countBySituacao(QueixaSituacao.ABERTA);
 	}
 }

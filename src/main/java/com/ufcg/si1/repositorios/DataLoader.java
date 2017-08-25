@@ -45,13 +45,9 @@ public class DataLoader {
 
 		Queixa queixa2 = new Queixa("Comida Estragada no Restaurante", "Lucas Amigao", "amigao@ccc.ufcg",
 				"av. Getulio Vargas 366", "Centro", "PB", "C. Grande", QueixaTipo.ALIMENTAR);
-		
-		Queixa queixa3 = new Queixa("Mal atendimento", "Quel", "quel@ccc.ufcg",
-				"UFCG", "Universitario", "PB", "C. Grande", QueixaTipo.SERVICO_GERAL);
-		Queixa queixa4 = new Queixa("Mal atendimento", "Quel", "quel@ccc.ufcg",
-				"UFCG", "Universitario", "PB", "C. Grande", QueixaTipo.SERVICO_GERAL);
-		Queixa queixa5 = new Queixa("Mal atendimento", "Quel", "quel@ccc.ufcg",
-				"UFCG", "Universitario", "PB", "C. Grande", QueixaTipo.SERVICO_GERAL);
+
+		Queixa queixa3 = new Queixa("Mal atendimento", "Quel", "quel@ccc.ufcg", "UFCG", "Universitario", "PB",
+				"C. Grande", QueixaTipo.SERVICO_GERAL);
 
 		Administrador admin1 = new Administrador("Victor", "1234"); // ab156455rt
 		Administrador admin2 = new Administrador("Mateus", "1234"); // ch478955wb
@@ -62,16 +58,10 @@ public class DataLoader {
 
 		postoSaude.adicionarEspecialidade(pediatria);
 		postoSaude.adicionarEspecialidade(ginecologista);
-		prefeitura.setSituacaoExtra();
-		queixa.setSituacao(QueixaSituacao.FECHADA);
-		queixa2.setSituacao(QueixaSituacao.FECHADA);
-		queixa3.setSituacao(QueixaSituacao.FECHADA);
-		queixa4.setSituacao(QueixaSituacao.FECHADA);
+
 		this.queixaRepositorio.save(queixa);
 		this.queixaRepositorio.save(queixa2);
 		this.queixaRepositorio.save(queixa3);
-		this.queixaRepositorio.save(queixa4);
-		this.queixaRepositorio.save(queixa5);
 		this.usRepositorio.save(postoSaude);
 		this.usRepositorio.save(postoSaude2);
 		this.usRepositorio.save(hospital);

@@ -20,7 +20,5 @@ public interface QueixaService {
 	boolean atualizaQueixa(Queixa queixa);
 
 	public void deletaTodasQueixas();
-	
-	public double quantidadeQueixasAbertas();
 
 }
