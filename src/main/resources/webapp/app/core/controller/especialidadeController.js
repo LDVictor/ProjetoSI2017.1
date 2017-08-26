@@ -1,7 +1,7 @@
 app.controller("addEspecialidade", function ($scope, $http, toastr, $location) {
 
     $scope.addEspecialidade = function (especialidade) {
-        $http.post("http://localhost:5000/DisqueSaudeApp/api/especialidade/",
+        $http.post("https://localhost:5000/DisqueSaudeApp/api/especialidade/",
             JSON.stringify(especialidade)).then(function success(response) {
             toastr.success("Especialidade adicionada com sucesso!");
             $location.path('/createdespecialidade/');
@@ -17,7 +17,7 @@ app.controller("consultaEspecialidade", function ($scope, $http) {
     $scope.unidadesSaude = [];
     
     $scope.procuraEspecialidadeNaUnidadeSaude = function (descricao) {
-        $http.get("http://localhost:5000/DisqueSaudeApp/api/especialidade/unidades/" + descricao)
+        $http.get("https://localhost:5000/DisqueSaudeApp/api/especialidade/unidades/" + descricao)
             .then(function successCallback(response) {
             	console.log(response.data);
                 $scope.unidadesSaude = response.data;

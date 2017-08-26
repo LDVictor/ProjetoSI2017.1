@@ -45,7 +45,7 @@ app.controller("procuraUnidadeSaude", function ($scope, $http) {
 
     $scope.searchHU = function (neighborhood) {
         $http.get(
-            "http://localhost:5000/DisqueSaudeApp/api/unidade/"
+            "https://localhost:5000/DisqueSaudeApp/api/unidade/"
             + neighborhood).then(function success(response) {
             $scope.units = response.data;
             console.log("Foram encontradas Unidades de saúde");

@@ -28,7 +28,7 @@ app.controller("procuraQueixa", function ($scope, $http) {
 
     $scope.complaint;
     $scope.searchComplaint = function (id) {
-        $http.get("http://localhost:5000/DisqueSaudeApp/api/queixa/" + id)
+        $http.get("https://localhost:5000/DisqueSaudeApp/api/queixa/" + id)
             .then(function successCallback(response) {
                 $scope.complaint = response.data;
             }, function errorCallback(error) {
