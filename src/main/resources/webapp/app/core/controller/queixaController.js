@@ -1,7 +1,7 @@
 app.controller("registraQueixa", function ($scope, $http, toastr, $location) {
 
     $scope.registerComplaint = function (complaint) {
-        $http.post("http://localhost:5000/DisqueSaudeApp/api/queixa/",
+        $http.post("https://localhost:5000/DisqueSaudeApp/api/queixa/",
             JSON.stringify(complaint)).then(function success(response) {
             toastr.success("Queixa adicionada com sucesso!");
             $location.path('/createdcomplaint/' + response.data.id);
@@ -15,7 +15,7 @@ app.controller("registraQueixa", function ($scope, $http, toastr, $location) {
 app.controller("atualizarQueixaCtrl", function ($scope, $http) {
 	$scope.queixa;
     $scope.atualizarQueixa = function (id, comentario, situacao) {
-        $http.get("http://localhost:5000/DisqueSaudeApp/api/queixa/atualizaQueixa/" + id).then(function sucessCallback(response) {
+        $http.get("https://localhost:5000/DisqueSaudeApp/api/queixa/atualizaQueixa/" + id).then(function sucessCallback(response) {
         	console.log(response.data);
         	$scope.queixa = response.data
         }, function error(error) {
@@ -43,7 +43,7 @@ app.controller("situacaoGeralQueixas", function ($scope, $http) {
     $scope.situation = "";
 
     var getGeneralSituationComplaints = function (neighborhood) {
-        $http.get("http://localhost:5000/DisqueSaudeApp/api/geral/situacao")
+        $http.get("https://localhost:5000/DisqueSaudeApp/api/geral/situacao")
             .then(function success(response) {
                 console.log(response.data);
 
@@ -96,7 +96,7 @@ app.controller("mensagemQueixaDeletada", function ($scope, $routeParams) {
 app.controller("retornaQueixasCtrl", function ($scope, $http) {
     $scope.listaQueixas = [];
     $scope.retornaQueixas = function () {
-        $http.get("http://localhost:5000/DisqueSaudeApp/api/queixa/listarTodasQueixas").then(function sucessCallback(response) {
+        $http.get("https://localhost:5000/DisqueSaudeApp/api/queixa/listarTodasQueixas").then(function sucessCallback(response) {
 
             $scope.listaQueixas = response.data;
 
@@ -113,7 +113,7 @@ app.controller("comentaQueixaCtrl", function ($scope, $http) {
     $scope.comentaQueixa = function (id) {
         var comentario = prompt("Digite seu comentário:", "...");
 
-        $http.post("http://localhost:5000/DisqueSaudeApp/api/queixa/" + id)
+        $http.post("https://localhost:5000/DisqueSaudeApp/api/queixa/" + id)
             .then(function sucessCallback(response) {
                 response.data.obj.comentario = comentario;
             }, function errorCallback(error) {
@@ -127,7 +127,7 @@ app.controller("apagaQueixaCtrl", function ($scope, $http) {
     $scope.deleta = null;
 
     $scope.apagaQueixa = function (id) {
-        $http.get("http://localhost:5000/DisqueSaudeApp/api/queixa/" + id)
+        $http.get("https://localhost:5000/DisqueSaudeApp/api/queixa/" + id)
             .then(function sucessCallback(response) {
                 response.data.obj = $scope.deleta;
             }, function errorCallback(error) {
