@@ -28,6 +28,7 @@ public class QueixaServiceImpl implements QueixaService {
 		return this.queixaRepository.save(queixa);
 	}
 
+	
 	@Override
 	public Queixa atualizaQueixa(Long id, String comentario, QueixaSituacao queixaSituacao) {
 		Queixa queixa = this.queixaRepository.findOne(id);

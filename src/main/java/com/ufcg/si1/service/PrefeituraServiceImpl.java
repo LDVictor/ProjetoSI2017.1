@@ -18,6 +18,7 @@ public class PrefeituraServiceImpl implements PrefeituraService {
 	private static final Log LOGGER = LogFactory.getLog(PrefeituraService.class);
 	
 	@Override
+	
 	public void modificaSituacaoPrefeitura(String situacao) {
 		LOGGER.debug("Modificando situacao da Prefeitura para:" + situacao);
 		Prefeitura prefeitura = Prefeitura.getInstance();
