@@ -14,6 +14,7 @@ app.controller("modificaSituacaoPrefeitura", function ($scope, $http, toastr, $l
 
 app.controller("login", function ($rootScope, $scope, $location, $http) {
     $scope.logarComoAdmin = function (adLogin, adSenha) {
+        $scope.logado;
         var adminLogin = {login: adLogin, senha: adSenha};
         if ($scope.logado == true) {
             alert("Você já está logado como administrador!");
