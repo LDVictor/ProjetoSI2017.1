@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.ufcg.si1.model.UnidadeSaude;
 
 @Repository
+
 public interface UnidadeSaudeRepositorio extends JpaRepository<UnidadeSaude, Long> {
 	
 	public Collection<UnidadeSaude> findByBairro(String bairro);

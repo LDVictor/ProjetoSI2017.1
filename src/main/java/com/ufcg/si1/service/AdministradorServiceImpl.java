@@ -16,6 +16,7 @@ public class AdministradorServiceImpl implements AdministradorService {
 
     @Override
     public Administrador logar(Administrador admin) {
+    	
         return logar(admin.getLogin(), admin.getSenha());
     }
 

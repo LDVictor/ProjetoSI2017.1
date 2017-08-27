@@ -42,6 +42,7 @@ public abstract class UnidadeSaude {
 	}
 
 	public List<Especialidade> getEspecialidades() {
+		
 		return this.especialidades;
 	}
 

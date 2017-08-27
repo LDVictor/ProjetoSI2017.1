@@ -38,6 +38,7 @@ public class Queixa {
 
 	public Queixa(String descricao, String nome, String email, String rua, String bairro, String uf, String cidade,
 			QueixaTipo tipo) {
+		
 		this.solicitante = new Pessoa(nome, email);
 		this.endereco = new Endereco(rua, bairro, uf, cidade);
 		this.descricao = descricao;
