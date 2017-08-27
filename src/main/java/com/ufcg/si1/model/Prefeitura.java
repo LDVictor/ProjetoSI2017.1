@@ -44,10 +44,12 @@ public class Prefeitura {
 	}
 
 	public void setSituacao(SituacaoPrefeitura situacao) {
+		
 		this.situacao = situacao;
 	}
 	
 	public void setSituacaoNormal() {
+		
 		this.situacao = new SituacaoNormal();
 	}
 	
