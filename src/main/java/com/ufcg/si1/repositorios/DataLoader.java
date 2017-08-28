@@ -49,12 +49,12 @@ public class DataLoader {
 		Queixa queixa3 = new Queixa("Mal atendimento", "Quel", "quel@ccc.ufcg", "UFCG", "Universitario", "PB",
 				"C. Grande", QueixaTipo.SERVICO_GERAL);
 
-		Administrador admin1 = new Administrador("Victor", "1234"); // ab156455rt
-		Administrador admin2 = new Administrador("Mateus", "1234"); // ch478955wb
-		Administrador admin3 = new Administrador("Raquel", "1234"); // bn549033mn
-		Administrador admin4 = new Administrador("Lucas", "1234"); // pb990552in
-		Administrador admin5 = new Administrador("Massoni", "1234"); // yu445720ip
-		Administrador admin6 = new Administrador("Melina", "1234"); // xc781206bb
+		Administrador admin1 = new Administrador("Victor", "ab156455rt");
+		Administrador admin2 = new Administrador("Mateus", "ch478955wb");
+		Administrador admin3 = new Administrador("Raquel", "bn549033mn");
+		Administrador admin4 = new Administrador("Lucas", "pb990552in");
+		Administrador admin5 = new Administrador("Massoni", "yu445720ip");
+		Administrador admin6 = new Administrador("Melina", "xc781206bb");
 
 		postoSaude.adicionarEspecialidade(pediatria);
 		postoSaude.adicionarEspecialidade(ginecologista);
