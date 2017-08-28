@@ -1,0 +1,25 @@
+<div id="mudarSituacao">
+<div class="container center-block">
+		<div>
+			<li><a href="#!/login/admin"><i class="fa fa-id-card-o"></i>
+				<<< Voltar à Área do Administrador</a></li>
+			<h1></h1>
+			<form name="complaintForm">
+				<div class="col-md-5 col-md-offset-3">
+					<fieldset>
+						<legend>Alterar Situação da Prefeitura</legend>
+						<!--Description field-->
+						<input type="radio" ng-model="situacao" value="Normal" /><b> Normal</b>
+						<h1></h1>
+						<input type="radio" ng-model="situacao" value="Extra" /><b> Extra</b>
+						<h1></h1>
+						<input type="radio" ng-model="situacao" value="Caos" /><b> Caos</b>
+						<h1></h1>
+					</fieldset>
+					<button class="btn btn-primary btn-block"
+							ng-click="modificaSituacaoPrefeitura(situacao)">Mudar Situação da Prefeitura</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

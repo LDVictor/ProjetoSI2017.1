@@ -1,0 +1,40 @@
+<div class="container center-block">
+	<div>
+		<li><a href="#!/login/admin"><i class="fa fa-id-card-o"></i>
+			<<< Voltar à Área do Administrador</a></li>
+		<h1></h1>
+		<form name="complaintForm">
+			<div class="col-md-5 col-md-offset-3">
+				<fieldset>
+					<legend>Dados da Unidade de Saude</legend>
+					<!--Description field-->
+					<div class="form-group row">
+						<label for="inputBairro" class="col-sm-2 col-form-label">Nome:</label>
+						<div class="col-sm-12">
+							<input type="text" name="nome" id="inputNome"
+								ng-model="unidadeSaude.nome">
+						</div>
+						<h1></h1>
+						<label for="inputDescription" class="col-sm-2 col-form-label">Descrição:</label>
+						<div class="col-sm-12">
+							<textarea class="form-control" name="description"
+								id="inputDescription" ng-model="unidadeSaude.descricao"></textarea>
+						</div>
+						<h1></h1>
+						<label for="inputBairro" class="col-sm-2 col-form-label">Bairro:</label>
+						<div class="col-sm-12">
+							<input type="text" name="bairro" id="inputBairro"
+								ng-model="unidadeSaude.bairro">
+						</div>
+						<h1></h1>
+
+					</div>
+				</fieldset>
+				<button class="btn btn-primary btn-block"
+					ng-click="addUnidadeSaude(unidadeSaude)">Adicionar Unidade
+					Saude</button>
+			</div>
+		</form>
+	</div>
+</div>
+

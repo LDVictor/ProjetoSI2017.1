@@ -1,0 +1,54 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand">Área do Administrador</a>
+        </div>
+    </div>
+</nav>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <h1></h1>
+        <li><a href="#!/unidade/adicionaPostoSaude"><i
+                class="fa fa-eyedropper"></i> Adicionar Posto de Saúde</a></li>
+        <li><a href="#!/unidade/adicionaHospital"><i
+                class="fa fa-heartbeat"></i> Adicionar Hospital</a></li>
+        <li><a href="#!addespecialidade"><i class="fa fa-check"></i>
+            Adicionar Especialidade</a></li>
+        <li><a href="#!/prefeitura/modifica"><i class="fa fa-institution"></i>
+            Modificar Situação da Prefeitura</a></li>
+        <li><a href="#!searchaverage"><i class="fa fa-bar-chart"></i>
+            Pesquisar Média Médico por Paciente</a></li>
+        <li><a href="#!generalSituationComplaints"><i
+                class="fa fa-balance-scale"></i> Situação Geral das Queixas</a></li>
+        <h1></h1>
+        <li><a href="#!/login/admin"><i
+                class="fa fa-comments"></i> Exibir Queixas</a></li>
+        <li><a href="#!/login/listaUnidadeSaude"><i
+                class="fa fa-id-card-o"></i> Exibir Unidades de Saúde</a></li>
+        <h1></h1>
+    </div>
+</nav>
+
+<div id="us" ng-init="retornaUnidadeSaude()">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">Unidades de Saúde</a>
+            </div>
+        </div>
+        <div id="unidadesDeSaude">
+            <table class="table">
+                <tr ng-repeat="us in listaUnidadeSaude">
+                    <td></td>
+                    <td>{{us.id}}</td>
+                    <td>{{us.descricao}}</td>
+                  	<td class="badge badge-default" ng-repeat="esp in us.especialidades">
+                                <b>{{esp.descricao}}</b>
+                            </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </nav>
+</div>
